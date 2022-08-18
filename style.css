@@ -1,0 +1,42 @@
+body {
+    color: #FFF;
+    font-family: Raleway, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.bg {
+    background-color: #36393e;
+    width: auto;
+    height: 100vh;
+    /* overflow: hidden; */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    /* overflow: auto;
+    margin: 0px; */
+}
+
+.welcome {
+    height: 100vh;
+    text-align: center;
+    border: 2px dashed #f69c55;
+}
+
+.w-1 {
+    font-size: 30px;
+    margin: 0px;
+}
+
+.w-2 {
+    font-size: 110px;
+    margin: 0px;
+}
+
+.products {
+    border:
+    font-size: 110px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+}
