@@ -9,31 +9,82 @@ body {
     background-color: #36393e;
     width: auto;
     height: 100vh;
-    /* overflow: hidden; */
-    /* background-size: cover;
-    background-repeat: no-repeat; */
-    /* overflow: auto;
-    margin: 0px; */
 }
 
 .welcome {
     height: 100vh;
-    text-align: center;
     border: 2px dashed #f69c55;
 }
 
-.w-1 {
-    font-size: 30px;
-    margin: 0px;
+.tittle {
+    display: inline-block;
+    font-size: 16vh;
+    text-align: center;
+    font-weight: bold;
+    line-height: 17vh;
+    margin: 40vh 16%;
+    padding: 0px 1.4%;
+    background-color: #282b30;
+    box-shadow: 10px 10px 8px #1e2124;
+    border-radius: 20px;
 }
 
-.w-2 {
-    font-size: 110px;
-    margin: 0px;
+.scrolldown {
+    position: absolute;
+    bottom: -3vh;
+    left: 50%;
+    width: 4vh;
+    height: 4vh;
+    transform: translateY(-80px) translateX(-50%) rotate(45deg);
+}
+
+.scrolldown span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+}
+
+.scrolldown span:nth-child(1){
+    transform: translate(-15px, -15px);
+    animation-delay: -0.4s;
+}
+
+.scrolldown span:nth-child(2){
+    transform: translate(0, 0);
+    animation-delay: -0.2s;
+}
+
+.scrolldown span:nth-child(3){
+    transform: translate(15px, 15px);
+    animation-delay: 0s;
+}
+
+@keyframes animate {
+    0% {
+        top: -5px;
+        left: -5px;
+        opacity: 0;
+    }
+    25% {
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+    }
+    50%,100% {
+        top: 5px;
+        left: 5px;
+        opacity: 0;
+    }
 }
 
 .products {
-    border:
     font-size: 110px;
     display: flex;
     justify-content: center; 
