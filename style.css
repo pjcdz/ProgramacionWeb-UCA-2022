@@ -14,32 +14,34 @@
     background-color:#555c60
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    background-color: #1e2124;
     color: #FFF;
     font-family: Raleway, sans-serif;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
-.bg {
-    background-color: #1e2124;
-}
-
-.welcome {
+#home {
     height: 100vh;
-    /* border: 2px dashed #f69c55; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    background-image: url(img/blob.jpg);
+    background: linear-gradient(165deg,
+        rgb(0 0 0) 0%,
+        rgba(0,0,0,.7) 20%,
+        rgba(0,0,0,.4) 75%,
+        rgba(0,0,0,.2) 100%),
+        url(img/bg.jpg);
+    /* background: linear-gradient(0deg, rgba(0,0,0,.7),rgba(0,0,0,.7)),url(img/bg.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;    
 }
 
-.welcome div {
-    animation: hue-animation 3s alternate infinite;
+#home #centered {
     height: 100%;
     width: 100%;
     display: flex;
@@ -47,97 +49,61 @@ body {
     justify-content: center;
 }
 
-/* 
-.welcome div {
-    background: linear-gradient(165deg,rgb(0 0 0) 10%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.4) 75%,rgba(0,0,0,0) 100%);
-    height: 100%;
-    width: 100%;
+#home #centered #title{
+    height: 175px;
+    width: 340px;
+    position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+#home #centered #title:before{
+    content: "";
+    height: 250%;
+    width: 250%;
+    position: absolute;
+    background: conic-gradient(
+        #2de2e6,
+        #035ee8,
+        #f6019d,
+        #d40078,
+        #9700cc,
+        #2de2e6
+    );
+    left: -75%;
+    top: -75%;
+    animation: spin 2.5s infinite linear;
+}
+@keyframes spin{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+#home #centered #title:after{
+    content: "SIAMES STORE";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 93%;
+    width: 96%;
+    top: 3.5%;
+    left: 2%;
+    border-radius: 5px;
+    font-size: 75px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
-@media screen and (max-width:520px) {
+/* @media screen and (max-width:520px) {
     .welcome div {
         background: linear-gradient(165deg,rgb(0 0 0) 10%,rgba(0,0,0,.7) 30%,rgba(0,0,0,.4) 55%,rgba(0,0,0,0) 100%);
     }
 } */
-
-.welcome h1 {
-    filter: none;
-    font-size: 60px;
-    z-index: 2;
-}
-
-.topbg {
-    position: absolute;
-    z-index: -1;
-}
-
-.topbg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(165deg,rgb(0 0 0) 10%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.4) 75%,rgba(0,0,0,0) 100%);
-}
-
-.blob {
-    animation: hue-animation 3s alternate infinite;
-    /* height: 100vh; */
-    background-repeat: no-repeat;
-    position: relative;
-    /* z-index: -1; */
-}
-
-@keyframes hue-animation {
-    100% {
-        filter: hue-rotate(45deg) blur(15px);
-    }
-}
-
-.box-tittle {
-    position: absolute;
-    font-size: 16vh;
-    font-weight: bold;
-    line-height: 17vh;
-    padding: 0px 1.4%;
-    background-color: rgba(0, 0, 0, 0.75);
-    /* box-shadow: 10px 10px 8px #1e2124; */
-    border-radius: 20px;
-}  
-
-.glow::before, .glow::after {
-    content: "";
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    height: calc(100% + 5px);
-    width: calc(100% + 5px);
-    background: linear-gradient(45deg,#2de2e6,#035ee8,#f6019d,#d40078,#9700cc,#2de2e6);; 
-    background-size: 400%;
-    border-radius: 20px;
-    animation: glow 20s linear infinite;
-    z-index: -1;
-}
-
-@keyframes glow {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
-
-.glow::after {
-    filter: blur(20px);
-}
 
 /* ACTUALMENTE NO EN USO PERO MUY UTIL PARA BOXES
 .glass {
@@ -156,7 +122,6 @@ body {
     width: 10vh;
     height: 10vh;
     transform: translateY(-80px) translateX(-50%) rotate(45deg);
-    z-index: 0;
 }
 
 .scrolldown span {
@@ -169,7 +134,7 @@ body {
     border-bottom: 4px solid #FFF;
     border-right: 4px solid #FFF;
     border-radius: 7px;
-    animation: animate 1.5s linear infinite;
+    animation: scroll 1.5s linear infinite;
     opacity: 0;
 }
 
@@ -188,7 +153,7 @@ body {
     animation-delay: 0s;
 }
 
-@keyframes animate {
+@keyframes scroll {
     0% {
         top: -5px;
         left: -5px;
