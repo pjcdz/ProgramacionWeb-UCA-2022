@@ -1,42 +1,251 @@
+::-webkit-scrollbar {
+    width:16px
+}
+
+::-webkit-scrollbar-thumb {
+    height:56px;
+    border-radius:8px;
+    border:4px solid transparent;
+    background-clip:content-box;
+    background-color:#484e51
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color:#555c60
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    background-color: #1e2124;
     color: #FFF;
     font-family: Raleway, sans-serif;
-    margin: 0px;
-    padding: 0px;
+    /* overflow-x: hidden; */
 }
 
-.bg {
-    background-color: #36393e;
-    width: auto;
+#home {
     height: 100vh;
-    /* overflow: hidden; */
-    /* background-size: cover;
-    background-repeat: no-repeat; */
-    /* overflow: auto;
-    margin: 0px; */
+    /* background: linear-gradient(165deg,
+        rgb(0 0 0) 0%,
+        rgba(0,0,0,.7) 20%,
+        rgba(0,0,0,.4) 75%,
+        rgba(0,0,0,.2) 100%),
+        url(img/bg.jpg); */
+    /* background: linear-gradient(0deg, rgba(0,0,0,.7),rgba(0,0,0,.7)),url(img/bg.jpg); */
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;     */
 }
 
-.welcome {
+#home .img {
+    position: absolute;
+    width: 100%;
     height: 100vh;
+    background: linear-gradient(165deg,
+        rgb(0 0 0) 0%,
+        rgba(0,0,0,.7) 20%,
+        rgba(0,0,0,.4) 75%,
+        rgba(0,0,0,.2) 100%),
+        url(img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: hue-animation 2s alternate infinite;
+}
+
+@keyframes hue-animation {
+    100% {
+        filter: hue-rotate(15deg) blur(20px);
+    }
+}
+
+#home #centered {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home #centered #title{
+    position: absolute;
+    height: 175px;
+    width: 340px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+#home #centered #title:before{
+    content: "";
+    height: 250%;
+    width: 250%;
+    position: absolute;
+    background: conic-gradient(
+        #2de2e6,
+        #035ee8,
+        #f6019d,
+        #d40078,
+        #9700cc,
+        #2de2e6
+    );
+    left: -75%;
+    top: -75%;
+    animation: spin 2.5s infinite linear;
+}
+@keyframes spin{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+#home #centered #title:after{
+    content: "SIAMES STORE";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 95%;
+    width: 97%;
+    top: 2.5%;
+    left: 1.5%;
+    border-radius: 5px;
+    font-size: 75px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    line-height: 100%;
+    text-shadow: 0 0 15px rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
     text-align: center;
-    border: 2px dashed #f69c55;
 }
 
-.w-1 {
-    font-size: 30px;
-    margin: 0px;
+/* TABLET */
+
+@media screen and (min-width:600px) {
+    /* #home {
+        border: solid violet;
+    } */
+    #home #centered #title{
+        height: 300px;
+        width: 580px;
+    }
+    #home #centered #title:after{
+        font-size: 138px;
+    }
 }
 
-.w-2 {
-    font-size: 110px;
-    margin: 0px;
+/* LAPTOP */
+
+@media screen and (min-width:992px) {
+    /* #home {
+        border: solid red;
+    } */
+    #home #centered #title{
+        height: 140px;
+        width: 900px;
+    }
+    #home #centered #title::before{
+        height: 690%;
+        width: 450%;
+        left: -172%;
+        top: -295%;
+    }
+    #home #centered #title:after{
+        height: 88%;
+        width: 97.8%;
+        top: 6%;
+        left: 1.1%;
+        font-size: 110px;
+        line-height: 113%;
+        flex-direction: column;
+        align-content: center;
+    }
+}
+
+/* COMPUTER */
+
+@media screen and (min-width:1200px) {
+    /* #home {
+        border: solid blue;
+    } */
+}
+
+/* ACTUALMENTE NO EN USO PERO MUY UTIL PARA BOXES
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+} */
+
+.scrolldown {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 10vh;
+    height: 10vh;
+    transform: translateY(-80px) translateX(-50%) rotate(45deg);
+}
+
+.scrolldown span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 4px solid #FFF;
+    border-right: 4px solid #FFF;
+    border-radius: 7px;
+    animation: scroll 1.5s linear infinite;
+    opacity: 0;
+}
+
+.scrolldown span:nth-child(1){
+    transform: translate(-17px, -17px);
+    animation-delay: -0.4s;
+}
+
+.scrolldown span:nth-child(2){
+    transform: translate(0, 0);
+    animation-delay: -0.2s;
+}
+
+.scrolldown span:nth-child(3){
+    transform: translate(17px, 17px);
+    animation-delay: 0s;
+}
+
+@keyframes scroll {
+    0% {
+        top: -5px;
+        left: -5px;
+        opacity: 0;
+    }
+    25% {
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+    }
+    50%,100% {
+        top: 5px;
+        left: 5px;
+        opacity: 0;
+    }
 }
 
 .products {
-    border:
-    font-size: 110px;
+    font-size: 20px;
     display: flex;
     justify-content: center; 
     align-items: center;
     height: 100vh;
 }
+
+
