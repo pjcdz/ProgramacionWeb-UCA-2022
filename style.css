@@ -29,16 +29,38 @@ body {
 
 #home {
     height: 100vh;
+    /* background: linear-gradient(165deg,
+        rgb(0 0 0) 0%,
+        rgba(0,0,0,.7) 20%,
+        rgba(0,0,0,.4) 75%,
+        rgba(0,0,0,.2) 100%),
+        url(img/bg.jpg); */
+    /* background: linear-gradient(0deg, rgba(0,0,0,.7),rgba(0,0,0,.7)),url(img/bg.jpg); */
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;     */
+}
+
+#home .img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
     background: linear-gradient(165deg,
         rgb(0 0 0) 0%,
         rgba(0,0,0,.7) 20%,
         rgba(0,0,0,.4) 75%,
         rgba(0,0,0,.2) 100%),
         url(img/bg.jpg);
-    /* background: linear-gradient(0deg, rgba(0,0,0,.7),rgba(0,0,0,.7)),url(img/bg.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;    
+    background-position: center;
+    animation: hue-animation 2s alternate infinite;
+}
+
+@keyframes hue-animation {
+    100% {
+        filter: hue-rotate(15deg) blur(20px);
+    }
 }
 
 #home #centered {
@@ -50,6 +72,7 @@ body {
 }
 
 #home #centered #title{
+    position: absolute;
     height: 175px;
     width: 340px;
     position: absolute;
@@ -85,25 +108,71 @@ body {
     content: "SIAMES STORE";
     position: absolute;
     background-color: rgba(0, 0, 0, 0.9);
-    height: 93%;
-    width: 96%;
-    top: 3.5%;
-    left: 2%;
+    height: 95%;
+    width: 97%;
+    top: 2.5%;
+    left: 1.5%;
     border-radius: 5px;
     font-size: 75px;
     font-weight: bold;
     letter-spacing: 6px;
     line-height: 100%;
+    text-shadow: 0 0 15px rgba(255,255,255,0.7);
     display: flex;
     align-items: center;
     text-align: center;
 }
 
-/* @media screen and (max-width:520px) {
-    .welcome div {
-        background: linear-gradient(165deg,rgb(0 0 0) 10%,rgba(0,0,0,.7) 30%,rgba(0,0,0,.4) 55%,rgba(0,0,0,0) 100%);
+/* TABLET */
+
+@media screen and (min-width:600px) {
+    /* #home {
+        border: solid violet;
+    } */
+    #home #centered #title{
+        height: 300px;
+        width: 580px;
     }
-} */
+    #home #centered #title:after{
+        font-size: 138px;
+    }
+}
+
+/* LAPTOP */
+
+@media screen and (min-width:992px) {
+    /* #home {
+        border: solid red;
+    } */
+    #home #centered #title{
+        height: 140px;
+        width: 900px;
+    }
+    #home #centered #title::before{
+        height: 690%;
+        width: 450%;
+        left: -172%;
+        top: -295%;
+    }
+    #home #centered #title:after{
+        height: 88%;
+        width: 97.8%;
+        top: 6%;
+        left: 1.1%;
+        font-size: 110px;
+        line-height: 113%;
+        flex-direction: column;
+        align-content: center;
+    }
+}
+
+/* COMPUTER */
+
+@media screen and (min-width:1200px) {
+    /* #home {
+        border: solid blue;
+    } */
+}
 
 /* ACTUALMENTE NO EN USO PERO MUY UTIL PARA BOXES
 .glass {
@@ -178,4 +247,5 @@ body {
     align-items: center;
     height: 100vh;
 }
+
 
