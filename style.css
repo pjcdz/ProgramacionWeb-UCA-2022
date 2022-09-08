@@ -150,13 +150,13 @@ body {
     } */
     #home .centered #title{
         height: 140px;
-        width: 900px;
+        width: 955px;
     }
     #home .centered #title::before{
-        height: 690%;
-        width: 450%;
-        left: -172%;
-        top: -295%;
+        height: 800%;
+        width: 600%;
+        left: -248%;
+        top: -345%;
     }
     #home .centered #title:after{
         height: 88%;
