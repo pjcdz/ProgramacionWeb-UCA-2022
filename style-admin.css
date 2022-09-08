@@ -121,7 +121,7 @@ body {
 }
 
 #agregar {
-    width: 155px;
+    width: 160px;
     height: 70px;
     background-color: #08a81d;
     margin-bottom: 2vh;
@@ -131,7 +131,8 @@ body {
     flex-direction: column;
     text-align: center;
     border-radius: 25px;
-    box-shadow: 0 0.03rem 0.06rem rgba(0,0,0,0.1), 0 0.1rem 0.3rem rgba(0,0,0,0.1);
+    border: solid #FFF;
+    /* box-shadow: 0 3px 5px rgba(0,0,0,0.1); */
     transition: .5s;
 } 
 
@@ -140,7 +141,7 @@ body {
 }
 
 #container{
-    max-width: 1000px;
+    max-width: 800px;
     margin:auto;
     display:flex;
     flex-wrap: wrap;  
@@ -149,42 +150,49 @@ body {
 }
 #container .card{
     position:relative;
-    width: 181px;
-    height: 282px;
+    width: 170px;
+    height: 210px;
     /* top: 100px;  */
-    margin:5px;
+    margin:5px 5px 10px 5px;
 }
 .card .face{
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 0.2rem;
     box-shadow: 0 0.03rem 0.06rem rgba(0,0,0,0.1), 0 0.1rem 0.3rem rgba(0,0,0,0.1);
     overflow: hidden;
     transition: .5s;
+    border-radius: 25px;
 }
 .card .front{
+    transform: perspective(600px) rotateY(0deg);
     /* box-shadow: 0px 5px 10px #2de2e6; */
     background-color: #fff;
 }
 .card .front img{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    margin: 0 4px 0 4px;
+    width: 162px;
+    height: 170px;
+    top: 0%;
     object-fit:contain;
 }
 
-.card .front #text{ 
+.card .front #card-footer{ 
     position: absolute;
-    top:74%;
+    border: solid #FFF;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    bottom: 0;
     width: 100%;
     height: 60px;
     background: #161616;
     text-align:center;
 }
+
 .card .front h3{
-    padding-top: 10px;
+    padding-top: 7px;
     font-size: 15px;
 }
 
@@ -199,12 +207,13 @@ body {
 #buttoms {
     position: absolute;
     background-color: #161616;
-    height: 115px;
-    width: 60px;
+    height: 120px;
+    width: 64px;
     top: 0;
     right: 0;
-    border-radius: 25px;
+    border-radius: 30px;
     opacity: 0;
+    border: solid #FFF;
 }
 
 #buttoms #edit {
@@ -212,9 +221,10 @@ body {
     height: 50px;
     width: 50px;
     top: 5px;
-    left: 5px;
+    left: 4px;
     background-image: url(img/edit.png);
     background-size: cover;
+    background-repeat: no-repeat;
     transition: .5s;
 }
 
@@ -223,9 +233,10 @@ body {
     height: 50px;
     width: 50px;
     top: 60px;
-    right: 5px;
+    left: 4px;
     background-image: url(img/remove.png);
     background-size: cover;
+    background-repeat: no-repeat;
     transition: .5s;
 }
 

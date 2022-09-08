@@ -79,12 +79,9 @@ body {
     position: absolute;
     height: 175px;
     width: 340px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
     box-shadow: 0 20px 35px rgba(0,0,0,0.3);
     overflow: hidden;
+    border-radius: 25px;
 }
 #home .centered #title:before{
     content: "";
@@ -116,7 +113,7 @@ body {
     width: 97%;
     top: 2.5%;
     left: 1.5%;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 75px;
     font-weight: bold;
     letter-spacing: 6px;
@@ -150,12 +147,12 @@ body {
     } */
     #home .centered #title{
         height: 140px;
-        width: 955px;
+        width: 900px;
     }
     #home .centered #title::before{
         height: 800%;
         width: 600%;
-        left: -248%;
+        left: -247%;
         top: -345%;
     }
     #home .centered #title:after{
@@ -251,14 +248,14 @@ body {
 }
 
 #h2 {
-    padding: 7vh 0;
+    padding: 7vh 0 7vh 0;
 }
 
 #h2 h1 {
     color: #000000;
 }
 
-nav{
+/* nav{
     width: 150px;
     margin: auto;
     background: #333;
@@ -309,10 +306,10 @@ nav{
     text-decoration: none;
     border-style: solid;
     border-color: black;
-}
+} */
 
 #container{
-    max-width: 900px;
+    max-width: 800px;
     margin:auto;
     display:flex;
     flex-wrap: wrap;  
@@ -321,20 +318,20 @@ nav{
 }
 #container .card{
     position:relative;
-    width: 181px;
-    height: 282px;
+    width: 170px;
+    height: 210px;
     /* top: 100px;  */
-    margin:5px;
+    margin:5px 5px 10px 5px;
 }
 .card .face{
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 0.2rem;
     box-shadow: 0 0.03rem 0.06rem rgba(0,0,0,0.1), 0 0.1rem 0.3rem rgba(0,0,0,0.1);
     overflow: hidden;
     transition: .5s;
+    border-radius: 25px;
 }
 .card .front{
     transform: perspective(600px) rotateY(0deg);
@@ -343,21 +340,27 @@ nav{
 }
 .card .front img{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    margin: 0 4px 0 4px;
+    width: 162px;
+    height: 170px;
+    top: 0%;
     object-fit:contain;
 }
 
 .card .front div{ 
     position: absolute;
-    top:79%;
+    border: solid #FFF;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    bottom: 0;
     width: 100%;
     height: 60px;
     background: #161616;
     text-align:center;
 }
+
 .card .front h3{
-    padding-top: 10px;
+    padding-top: 7px;
     font-size: 15px;
 }
 
@@ -373,27 +376,34 @@ nav{
     transform: perspective(600px) rotateY(180deg);
     background: #161616;
     padding: 15px;
+    width: 100%;
+    height: 100%;
+    border: solid #FFF;
     /* color: #000; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
-    border-radius: 0.2rem;
+    border-radius: 25px;
     box-shadow: 0 0.03rem 0.06rem rgba(0,0,0,0.1), 0 0.1rem 0.3rem rgba(0,0,0,0.1);
 }
+
+.card .back p{
+    font-size: 14px;
+    font-weight: 700;
+}
+
 .card .back .link{
     border-top: solid #FFF;
     height: 50px;
     line-height: 50px;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 5px;
 }
 .card .back .link a{
     color: #2de2e6;
 }
-.card .back h3{
-    font-size: 25px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
+
 .card:hover .front{
     transform: perspective(600px) rotateY(180deg);
 }
