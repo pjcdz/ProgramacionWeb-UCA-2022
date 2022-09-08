@@ -258,8 +258,61 @@ body {
     color: #000000;
 }
 
+nav{
+    width: 150px;
+    margin: auto;
+    background: #333;
+    font-size: 20px;
+    margin-top: 50px;
+    z-index: 1;
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+.menu-horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border-width: 1px;
+    border-style: solid;
+}
+.menu-horizontal >li >a{
+    display: block;
+    padding: 15px 10px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin: auto;
+    
+}
+.menu-horizontal > li:hover{
+    background-color: #da0641;
+}
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #da0641;
+}
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+    border-style: solid;
+    border-color: black;
+}
+.menu-vertical li:hover{
+    background-color: #2de2e6;
+}
+.menu-vertical li a{
+    display: block;
+    color: black;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+}
+
 #container{
-    max-width: 1000px;
+    max-width: 900px;
     margin:auto;
     display:flex;
     flex-wrap: wrap;  
