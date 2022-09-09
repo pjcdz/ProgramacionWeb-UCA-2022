@@ -147,7 +147,7 @@ body {
     } */
     #home .centered #title{
         height: 140px;
-        width: 900px;
+        width: 940px;
     }
     #home .centered #title::before{
         height: 800%;
