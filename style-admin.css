@@ -209,8 +209,8 @@ body {
 #buttoms {
     position: absolute;
     background-color: #161616;
-    height: 118px;
-    width: 60px;
+    height: 122px;
+    width: 64px;
     top: 0;
     right: 0;
     border-radius: 30px;
@@ -250,11 +250,7 @@ body {
     opacity: 100;
 }
 
-#buttoms #edit:hover {
-    transform: scale(1.05);
-}
-
-#buttoms #remove:hover {
+#buttoms #edit:hover, #buttoms #remove:hover {
     transform: scale(1.05);
 }
 
@@ -269,4 +265,268 @@ body {
     #agregar {
         margin-bottom: 3vh;
     }
+}
+
+/* ##################################################################################################################################### */
+
+.create-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+.create-modal .modal-header {
+    top: 0px;
+    background-color: #161616;
+    color: white;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 16px;
+    border-bottom: solid #FFF;
+    font-size: 13.3px;
+    text-align: center;
+}
+
+.create-modal .modal-footer #create-c, .create-modal .modal-footer #create-g {
+    position: absolute;
+    bottom: 12px;
+    height: 50px;
+    width: 132px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.create-modal .modal-footer #create-c {
+    left: 10px;
+    background-color: #da0641;
+    border-bottom-left-radius: 15px;
+}
+
+.create-modal .modal-footer #create-g {
+    right: 10px;
+    background-color: #52a352;
+    border-bottom-right-radius: 15px;
+}
+
+.create-modal .modal-footer #create-c:hover, .create-modal .modal-footer #create-g:hover {
+    transform: scale(1.05);
+}
+
+
+/* The Modal (background) */
+.edit-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+  /* Modal Content */
+.modal-content {
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    background-color: #161616;
+    width: 300px;
+    height: 612px;
+    border-radius: 25px;
+    border: solid #FFF;
+}
+
+/* Add Animation */
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+.modal-header {
+    top: 0px;
+    background-color: #161616;
+    color: white;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 16px;
+    border-bottom: solid #FFF;
+    font-size: 14px;
+}
+
+.edit-close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 3px;
+}
+
+.edit-close:hover, .edit-close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-body label {
+    margin-top: 16px;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.modal-body input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.modal-body input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.modal-body #desc {
+    width: 100%;
+    height: 140px;
+    margin-top: 15px;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #161616;
+    font-size: 16px;
+    resize: none;
+    color: #FFF;
+    overflow: hidden;
+}
+
+.modal-footer {
+    bottom: 0px;
+    height: 66px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.modal-footer #cancelar, .modal-footer #guardar {
+    position: absolute;
+    bottom: 12px;
+    height: 50px;
+    width: 132px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.modal-footer #cancelar {
+    left: 10px;
+    background-color: #da0641;
+    border-bottom-left-radius: 15px;
+}
+
+.modal-footer #guardar {
+    right: 10px;
+    background-color: #52a352;
+    border-bottom-right-radius: 15px;
+}
+
+.modal-footer #cancelar:hover, .modal-footer #guardar:hover {
+    transform: scale(1.05);
+}
+
+/* The Modal (background) */
+.remove-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+.remove-modal .modal-content {
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    background-color: #161616;
+    width: 300px;
+    height: 190px;
+    border-radius: 25px;
+    border: solid #FFF;
+}
+
+.remove-modal .modal-body {
+    padding: 16px 16px;
+    font-size: 13px;
+    text-align: justify;
+}
+
+.remove-modal .modal-footer {
+    bottom: 0px;
+    height: 56px;
+    /* background-color: #13f1fc; */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.remove-modal .modal-footer #no, .remove-modal .modal-footer #si {
+    position: absolute;
+    bottom: 18px;
+    height: 40px;
+    width: 122px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.remove-modal .modal-footer #no {
+    left: 16px;
+    background-color: #da0641;
+    border-bottom-left-radius: 15px;
+}
+
+.remove-modal .modal-footer #si {
+    right: 16px;
+    background-color: #52a352;
+    border-bottom-right-radius: 15px;
+}
+
+.modal-footer #no:hover, .modal-footer #si:hover {
+    transform: scale(1.05);
 }
