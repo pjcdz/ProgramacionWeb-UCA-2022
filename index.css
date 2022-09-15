@@ -327,8 +327,8 @@ body {
     flex-wrap: wrap;  
     flex-direction: row;
     justify-content: center; 
-     
 }
+
 #container .card{
     position:relative;
     width: 170px;
@@ -482,6 +482,7 @@ body {
     }
 }
 
+/* ######################################################################################################################################################################################### */
 
 .contenedor{
     background: url(img/.jpg) no-repeat center;
