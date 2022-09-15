@@ -485,8 +485,6 @@ body {
 /* ######################################################################################################################################################################################### */
 
 .contenedor{
-    background: url(img/.jpg) no-repeat center;
-    background-size:cover;
     padding: 50px 40px;
     text-align: center;
     color: white;
