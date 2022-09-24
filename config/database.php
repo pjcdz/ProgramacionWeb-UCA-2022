@@ -1,6 +1,6 @@
 <?php
 
-$hostname = "06.189.187.214";
+$hostname = "206.189.187.214";
 $database = "siames-store";
 $username = "root";
 $password = "s1amesStore";
