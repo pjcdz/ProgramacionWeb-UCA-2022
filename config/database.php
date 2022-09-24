@@ -1,25 +1,10 @@
 <?php
-class Database {
-    private $hostname = "localhost:50";
-    private $database = "siames";
-    private $username = "root";
-    private $password = "1234";
-    private $charset = "utf8";
 
-    function conectar() {
-        try {
-            $conexion = "mysql:host=" . $this->hostname . "; dbname=" . $this->database . "; charset=" . $this->charset;
-            $options = [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_EMULATE_PREPARES => false
-            ];
+$hostname = "localhost";
+$database = "siames";
+$username = "root";
+$password = "";
 
-            $pdo = new PDO($conexion, $this->username, $this->password, $options);
+$mysqli = mysqli_connect($hostname, $username, $password, $database); 
 
-            return $pdo;
-        } catch(PDOException $e) {
-        echo "Error exception" . $e->getMessage();
-        exit;
-        }
-    }
-}
+?>
