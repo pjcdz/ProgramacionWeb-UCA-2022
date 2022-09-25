@@ -202,6 +202,10 @@ body {
     font-size: 22px;
 }
 
+.card .front h4 span{
+    font-size: 18px;
+}
+
 #buttoms {
     position: absolute;
     background-color: #161616;

@@ -503,7 +503,12 @@ body {
     margin-top: 10px;
     max-width: 150px;
 }
-
+.email-box .icono{
+    background: #2f3542;
+    width: 10px;
+    background-image: url(img/iconomsj2.jpg);
+    height: 40px;
+}
 .tbox,.btn{
     border: none;
     outline: none;
@@ -517,12 +522,7 @@ body {
     padding: 0 10px;
 }
 .btn{
-    background: linear-gradient(
-        45deg,
-        #f6019d,
-        #d40078,
-        #9700cc
-    );
+    background: #2f3542;
     color: white;
     padding: 0 10px;
     text-transform: uppercase;
