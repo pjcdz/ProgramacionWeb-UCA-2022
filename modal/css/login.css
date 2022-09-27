@@ -1,0 +1,218 @@
+::-webkit-scrollbar {
+    width:16px
+}
+
+::-webkit-scrollbar-thumb {
+    height:56px;
+    border-radius:8px;
+    border:4px solid transparent;
+    background-clip:content-box;
+    background-color:#484e51
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color:#555c60
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+body {
+    background-color: #000000;
+    color: #FFF;
+    font-family: sans-serif;
+    /* overflow-x: hidden; */
+}
+
+#home {
+    height: 100vh;
+    width: auto;
+}
+
+#home #img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(165deg,
+        rgb(0 0 0) 0%,
+        rgba(0,0,0,.7) 20%,
+        rgba(0,0,0,.4) 75%,
+        rgba(0,0,0,.2) 100%),
+        url(img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: hue-animation 2s alternate infinite;
+    z-index: -1;
+}
+
+@keyframes hue-animation {
+    100% {
+        filter: hue-rotate(15deg) blur(20px);
+    }
+}
+
+#home .centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#home #title {
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    padding: 5vh 0;
+    animation: move linear 2s infinite;
+}
+
+@keyframes move{
+    0%{
+        text-shadow: 
+        4px -4px 0 #da0641,
+        3px -3px 0 #da0641,
+        2px -2px 0 #da0641,
+        1px -1px 0 #da0641,
+        -4px 4px 0 #13f1fc,
+        -3px 3px 0 #13f1fc,
+        -2px 2px 0 #13f1fc,
+        -1px 1px 0 #13f1fc;
+    }
+    50%{
+        text-shadow: 
+        -4px 4px 0 #da0641,
+        -3px 3px 0 #da0641,
+        -2px 2px 0 #da0641,
+        -1px 1px 0 #da0641,
+        4px -4px 0 #13f1fc,
+        3px -3px 0 #13f1fc,
+        2px -2px 0 #13f1fc,
+        1px -1px 0 #13f1fc;
+    }
+    75%{
+    text-shadow:
+        4px 4px 0 #13f1fc,
+        3px 3px 0 #13f1fc,
+        2px 2px 0 #13f1fc,
+        1px 1px 0 #13f1fc,
+        -4px -4px 0 #da0641,
+        -3px -3px 0 #da0641,
+        -2px -2px 0 #da0641,
+        -1px -1px 0 #da0641;
+    }
+    100%{text-shadow: 
+        4px -4px 0 #da0641,
+        3px -3px 0 #da0641,
+        2px -2px 0 #da0641,
+        1px -1px 0 #da0641,
+        -4px 4px 0 #13f1fc,
+        -3px 3px 0 #13f1fc,
+        -2px 2px 0 #13f1fc,
+        -1px 1px 0 #13f1fc;
+    }
+}
+
+.login-box {
+    width: 320px;
+    height: 330px;
+    background: #000;
+    color: #fff;
+    top: 58%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 25px;
+}
+
+.login-box .avatar {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+#form {
+    margin-top: 10px;
+}
+
+.login-box h1 {
+    margin: 0;
+    padding: 0px 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"], .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: linear-gradient(
+        45deg,
+        #f6019d,
+        #d40078,
+        #9700cc
+    );
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: 0.5s;
+
+}
+
+.login-box input[type="submit"]:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    color: #000;
+}
+
+
+/* ############ LAPTOP ########## */
+
+@media screen and (min-width:992px) {
+    #home #title {
+        font-size: 75px;
+        margin-top: 8vh;
+    }
+
+    #agregar {
+        margin-bottom: 3vh;
+    }
+    
+    .login-box {
+        top: 68%;
+    }
+}
