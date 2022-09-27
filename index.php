@@ -86,6 +86,28 @@ $result = mysqli_query($mysqli, "SELECT id, nombre, descripcion, precio FROM pro
                 </form>
                 </div>
             </div>
+            <!-- The Modal -->
+            <div class="container-all" id="modal">
+                <div class="popup">
+                    <div class="img"></div>
+                    <div class="container-text">
+                        <h1><b>TECLADO RAZER HUNTSMAN MINI</b></h1>
+                        <h1>$120.000</h1>
+                        <p>Hablar de Razer dentro del mundo gamer es palabra mayor. Esta compañía ofrece productos de muy alta calidad a sus usuarios. Su línea de teclados es reconocida por haber recibido distintos galardones y premios internacionales por su alto desempeño.
+
+                            <br><b>Distinción a todo color:</b></br>
+                            Su retroiluminación le da un toque diferente a tu equipo y resalta su composición cuando es utilizado en espacios poco iluminados.
+                            
+                            <br><b>Mayor Durabilidad:</b></br>
+                            Diseñado con tecnología optomecánica, su ciclo de vida es más extendido que otros dispositivos estándar. A diferencia de estos, los interruptores opto-mecánicos tienen una media de 100 millones de pulsaciones contra 70 millones de sus predecesores. ¡Preparate para tenerlo por muchos años!
+                            
+                            <br><b>Tecnología antighosting:</b></br>
+                            Este dispositivo tiene teclas antighosting. Esta cualidad es indispensable si requerís de un uso intensivo del periférico. Gracias a esto podrás evitar fallas al tocar varias teclas al mismo tiempo.</p>
+                    </div>                  
+                </div>
+                <!--<a href="#" class="btn-close-popup">X</a>-->
+            </div>
+
         </section>
 
     </body>
