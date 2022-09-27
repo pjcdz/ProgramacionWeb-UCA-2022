@@ -13,6 +13,7 @@ $result = mysqli_query($mysqli, "SELECT id, nombre, descripcion, precio FROM pro
         <link rel="icon" href="img/SS2.png" type="image/icon type">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=DM+Sans%3A700%7CHeebo%3A400%2C700%7CAldrich%3A400&#038;display=swap&#038;ver=6.0.2' media='all'>
+        <script type="text/javascript" src="js/modal.js" defer></script>
     </head>
 
     <body>
