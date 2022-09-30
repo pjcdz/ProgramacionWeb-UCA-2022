@@ -574,7 +574,7 @@ body {
     
 }
 .img{
-    background-image: url(../css/img/teclado1.jpg);
+    background-image: url(../css/img/teclado.jpeg);
     background-size:contain;
     background-position: center;
     margin-bottom: 10px;
@@ -584,8 +584,6 @@ body {
     top: 15px;
     left:15px;
     width: 350px;
-    
-   
 }
 
 .titulo{
@@ -611,20 +609,19 @@ body {
     font-size: 16px;
 }
 
-/* .btn-close-popup{
-    position:ab;
+.btn-close-popup{
     width: 50px;
     height: 50px;
     position: absolute;
-    right: 170px;
-    top: 80px;
+    right: -24px;
+    top: -24px;
     background: #161616;
     color: white;
     border-radius: 50%;
     line-height: 10px;
     padding: 20px;
     text-decoration: none;
-} */
+} 
 /* Add Animation */
 
 @keyframes fadeIn {
@@ -668,6 +665,10 @@ body {
     .container-text p{
         font-size: 20px;
     }
+    .btn-close-popup{
+        right: -25px;
+        top: -20px
+    } 
 }
 @media screen and (max-width:500px){
     .popup{
@@ -678,7 +679,9 @@ body {
     .img{
         background-position: center;
         background-repeat: no-repeat;
-        
+        width: 250px;
+        display: flex;
+        left: 50px;
     }  
     .container-text{   
         padding: 10px;
@@ -689,4 +692,8 @@ body {
     .container-text p{
         font-size: 15px;
     }
+    .btn-close-popup{
+        right: -22px;
+        top: -23px
+    } 
 }
