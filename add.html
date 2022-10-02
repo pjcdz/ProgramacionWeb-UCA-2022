@@ -1,0 +1,51 @@
+<html>
+<head>  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SIAMES STORE - Hardware shop</title>
+    <link rel="icon" href="css/img/SS2.png" type="image/icon type">
+    <link rel="stylesheet" href="css/add.css">
+    <script type="text/javascript" src="js/funtions.js" defer></script>
+</head>
+
+<body>
+    <div id="img"></div>
+    <div class="edit-modal">
+        <div class="modal-content">
+			<div class="modal-header">
+                <h2>Agrega un nuevo producto</h2>
+            </div>
+            <div class="modal-body">
+                <form name="form1" method="post" action="add.php">
+                    <label for="name">Título</label>
+                    <input type="text" name="name">
+                    <label for="precio">Precio</label>
+                    <input type="text" name="precio" onkeypress="isInputNumber(event)">
+                    <label for="descripcion">Descripción</label>
+                    <!-- <input type="text" name="descripcion" value="<?php echo $desc;?>"> -->
+                    <textarea id="desc" name="descripcion" cols="33" rows="3" maxlength="95"></textarea>
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" name="categoria">
+                        <option value="Teclado">Teclado</option>
+                        <option value="Mouse">Mouse</option>
+                        <option value="Auricular">Auricular</option>
+                        <option value="Pantalla">Pantalla</option>
+                        <option value="Gabinete">Gabinete</option>
+                        <option value="PC">PC</option>
+                        <option value="Laptop">Laptop</option>
+                    </select>
+                    <!-- <input type="text" name="categoria"> -->
+                    <label for="imagen">Imagen</label>
+                    <input type="text" name="img">
+                    <div class="modal-footer">
+                        <a href="admin.php">
+                            <div id="cancelar">CANCELAR</div>
+                        </a>
+                        <input type="submit" id="guardar" name="Submit" value="GUARDAR">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
