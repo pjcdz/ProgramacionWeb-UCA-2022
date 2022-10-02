@@ -1,5 +1,10 @@
 <?php
 // including the database connection file
+session_start();
+if(!isset($_SESSION['AdminLoginId'])) {
+    header("Location: login.php");
+}
+
 include_once("config/database.php");
 
 if(isset($_POST['update']))

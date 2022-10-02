@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+if(!isset($_SESSION['AdminLoginId'])) {
+    header("Location: login.php");
+}
+
 require "config/database.php";
 $result = mysqli_query($mysqli, "SELECT id, name, descripcion, precio, img FROM products WHERE activo=1 ORDER BY id"); // using mysqli_query instead
 ?>

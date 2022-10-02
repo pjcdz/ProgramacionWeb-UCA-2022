@@ -8,6 +8,12 @@
 
 <body>
 <?php
+
+session_start();
+if(!isset($_SESSION['AdminLoginId'])) {
+    header("Location: login.php");
+}
+
 //including the database connection file
 include_once("config/database.php");
 

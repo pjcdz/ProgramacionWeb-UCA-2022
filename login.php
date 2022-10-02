@@ -45,7 +45,7 @@ require "config/database.php";
                     $_SESSION['AdminLoginId']=$_POST['AdminName'];
                     header("Location: admin.php");
                 } else {
-                    echo"<script>alert('Incorrect Password');</script>";
+                    echo"<script>alert('Contraseña incorrecta');</script>";
                 }
             }
             ?>
