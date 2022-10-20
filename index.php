@@ -26,6 +26,7 @@ if(empty($_GET["categoria"])){
         <title>SIAMES STORE - Hardware shop</title>
         <link rel="icon" href="css/img/SS2.png" type="image/icon type">
         <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/funtions.js" defer></script>
         <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=DM+Sans%3A700%7CHeebo%3A400%2C700%7CAldrich%3A400&#038;display=swap&#038;ver=6.0.2' media='all'>
     </head>
 
@@ -48,10 +49,10 @@ if(empty($_GET["categoria"])){
                 <h1 class="animated-shadow">NUESTROS PRODUCTOS</h1>
             </div>
             <ul class="nav">
-                <li><a href="index.php?categoria=pantalla#products">PANTALLAS</a></li>
-                <li><a href="index.php?categoria=teclado#products">TECLADOS</a></li>
-                <li><a href="index.php?categoria=mouse#products">MOUSE</a></li>
-                <li><a href="index.php?categoria=gabinete#products">GABINETES</a></li>
+                <li><a href="index.php?categoria=4#products">PANTALLAS</a></li>
+                <li><a href="index.php?categoria=1#products">TECLADOS</a></li>
+                <li><a href="index.php?categoria=2#products">MOUSE</a></li>
+                <li><a href="index.php?categoria=5#products">GABINETES</a></li>
                 <li><a href="index.php#products">TODOS</a></li>
             </ul>
             <div id="container">
@@ -60,30 +61,30 @@ if(empty($_GET["categoria"])){
                         <div class="face front">
                             <img src="<?php echo $row['img']; ?>">
                             <div>
-                                <h3><?php echo $row['name']; ?></h3>
+                                <h3><?php echo mb_strimwidth($row['name'], 0, 17, "..."); ?></h3>
                                 <h4><span>$</span><?php echo number_format($row['precio'], 0, ','); ?></h4>
                             </div>
                         </div>
                         <div class="face back">
-                            <p><?php echo $row['descripcion']; ?></p>
+                            <p><?php echo mb_strimwidth($row['descripcion'], 0, 95, "..."); ?></p>
                             <div class="link">
-                                <a href="#">Más información</a>
+                                <a href="info.php?id=<?php echo $row['id']?>">Más información</a>
                             </div>
                         </div>
                     </div> 
                 <?php } ?>   
             </div>
             <div class="contenedor">
-                <form action="">
-                    <h1>INGRESA TU MAIL AQUÍ!!</h1>
-                    <p>recibe ofertas y nuestros nuevos productos</p>
+                <form id="form1" action="#">
+                    <h1>INGRESA TU MAIL AQUÍ</h1>
+                    <p>recibi ofertas y nuestros nuevos productos</p>
                     <div class="email-box">
-                    <input class="tbox" type="email" name="" value="" placeholder="Enter your email">
-                    <button class="btn" type="button" name="button">Subscribe</button>
-                    </div>
+                        <input id="test" class="tbox" type="text" name="email" placeholder="Enter your email">
+                        <!-- <button class="btn" type="button" name="submit" onclick="ValidateEmail(document.form1.text1)">Subscribe</button>     -->
+                        <input class="btn" type="submit" name="submit" value="Subscribe" onclick="ValidateEmail()"/>
                 </form>
-                </div>
             </div>
+            
         </section>
 
     </body>

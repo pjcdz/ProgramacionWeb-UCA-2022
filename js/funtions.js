@@ -40,3 +40,14 @@ function isInputNumber(evt){
     }
     
 }
+
+function ValidateEmail() {
+    var inputText = document.getElementById("test");
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(inputText.value.match(mailformat)) {
+        return true;
+    } else {
+        alert("Ingresaste un email invalido");
+        return false;
+    }
+}

@@ -133,8 +133,8 @@ a {
 }
 
 #agregar, #cerrar {
-    width: 164px;
-    height: 70px;
+    width: 154px;
+    height: 66px;
     background-color: #161616;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     margin: 20px 10px;
@@ -148,10 +148,12 @@ a {
     /* box-shadow: 0 3px 5px rgba(0,0,0,0.1); */
     transition: .5s;
     color: #FFF;
+    font-size: 20px
 } 
 
 #cerrar {
-    width: 134px;
+    width: 124px;
+    height: 44px;
 }
 
 #agregar:hover, #cerrar:hover {
@@ -213,10 +215,18 @@ a {
 .card .front h3{
     padding-top: 7px;
     font-size: 15px;
+    font-weight: 300;
 }
 
 .card .front h4{
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2px;
+}
+
+.card .front h4 span{
+    font-size: 20px;
 }
 
 #buttoms {

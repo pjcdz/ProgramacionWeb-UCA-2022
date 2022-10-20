@@ -5,6 +5,11 @@ if(!isset($_SESSION['AdminLoginId'])) {
     header("Location: login.php");
 }
 
+if(isset($_POST['Logout'])) {
+    session_destroy();
+    header("Location: index.php");
+}
+
 require "config/database.php";
 $result = mysqli_query($mysqli, "SELECT id, name, descripcion, precio, img FROM products WHERE activo=1 ORDER BY id"); // using mysqli_query instead
 ?>
@@ -29,12 +34,12 @@ $result = mysqli_query($mysqli, "SELECT id, name, descripcion, precio, img FROM 
                 <div id="top-buttoms">
                     <a href="add.html">
                         <div id="agregar" class="btn-create">
-                            <h1>AGREGAR PRODUCTO</h1>
+                            AGREGAR PRODUCTO
                         </div>
                     </a>
-                    <div id="cerrar">
-                        <h1>CERRAR SESION</h1>
-                    </div>
+                    <form method="POST">
+                        <input type="submit" id="cerrar" name="Logout" value="LOGOUT">
+                    </form>
                 </div>
                 <div id="container">
                 <?php while($row = mysqli_fetch_array($result)) { ?>
@@ -50,7 +55,7 @@ $result = mysqli_query($mysqli, "SELECT id, name, descripcion, precio, img FROM 
                                 </a>
                             </div>
                             <div id="card-footer">
-                                <h3><?php echo $row['name']; ?></h3>
+                                <h3><?php echo mb_strimwidth($row['name'], 0, 17, "..."); ?></h3>
                                 <h4>$<?php echo number_format($row['precio'], 0, ','); ?></h4>
                             </div>
                         </div>

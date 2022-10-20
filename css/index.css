@@ -375,14 +375,18 @@ body {
 .card .front h3{
     padding-top: 7px;
     font-size: 15px;
+    font-weight: 300;
 }
 
 .card .front h4{
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2px;
 }
 
 .card .front h4 span{
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .card .back{

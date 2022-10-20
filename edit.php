@@ -64,9 +64,17 @@ while($res = mysqli_fetch_array($result))
 	$name = $res['name'];
     $desc = $res['descripcion'];
 	$precio = $res['precio'];
-	$categoria = $res['categoria'];
+	$categoria_id = $res['categoria'];
     $img = $res['img'];
 }
+
+$result2 = mysqli_query($mysqli, "SELECT * FROM categorias WHERE cat_id=$categoria_id");
+
+while($res2 = mysqli_fetch_array($result2))
+{
+	$categoria = $res2['cat_desc'];
+}
+
 ?>
 <html>
 <head>  
@@ -75,6 +83,7 @@ while($res = mysqli_fetch_array($result))
     <title>SIAMES STORE - Hardware shop</title>
     <link rel="icon" href="css/img/SS2.png" type="image/icon type">
     <link rel="stylesheet" href="css/edit.css">
+    <link rel="stylesheet" href="css/add.css">
 </head>
 
 <body>
@@ -82,7 +91,7 @@ while($res = mysqli_fetch_array($result))
     <div class="edit-modal">
         <div class="modal-content">
             <div class="modal-header">
-            <h2><?php echo $name;?></h2>
+            <h2><?php echo mb_strimwidth($name, 0, 22, "...");?></h2>
             </div>
             <div class="modal-body">
                 <form name="form1" method="post" action="edit.php">
@@ -92,9 +101,19 @@ while($res = mysqli_fetch_array($result))
                     <input type="text" name="precio" value="<?php echo $precio;?>">
                     <label for="descripcion">Descripción</label>
                     <!-- <input type="text" name="descripcion" value="<?php echo $desc;?>"> -->
-                    <textarea id="desc" name="descripcion" cols="33" rows="3" maxlength="95"><?php echo $desc;?></textarea>
+                    <!-- <textarea id="desc" name="descripcion" cols="33" rows="3" maxlength="95"><?php echo $desc;?></textarea> -->
+                    <textarea id="desc" name="descripcion" cols="33" rows="3"><?php echo $desc;?></textarea>
                     <label for="categoria">Categoria</label>
-                    <input type="text" name="categoria" value="<?php echo $categoria;?>">
+                    <select id="categoria" name="categoria">
+                        <option value="<?php echo $categoria_id;?>">Actual: <?php echo $categoria;?></option>
+                        <option value=1>Teclado</option>
+                        <option value=2>Mouse</option>
+                        <option value=3>Auricular</option>
+                        <option value=4>Pantalla</option>
+                        <option value=5>Gabinete</option>
+                        <option value=6>PC</option>
+                        <option value=7>Laptop</option>
+                    </select>
                     <label for="imagen">Imagen</label>
                     <input type="text" name="img" value="<?php echo $img;?>">
                     <div class="modal-footer">

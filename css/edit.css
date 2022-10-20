@@ -28,7 +28,7 @@ body {
     background-color: #000000;
     color: #FFF;
     font-family: sans-serif;
-    /* overflow-x: hidden; */
+    /* -overflowx: hidden; */
 }
 
 #img {
@@ -153,7 +153,7 @@ body {
     font-size: 16px;
     resize: none;
     color: #FFF;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .modal-footer {
