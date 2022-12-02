@@ -41,13 +41,29 @@ function isInputNumber(evt){
     
 }
 
-function ValidateEmail() {
-    var inputText = document.getElementById("test");
+function SubmitEmail() {
+    event.preventDefault();
+
+    var email = $('input[name=email]').val();
+
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(inputText.value.match(mailformat)) {
-        return true;
-    } else {
+
+    if(email.match(mailformat) && email != '') {
+        var formData = {email: email};
+        $('#message').html('<span style="color: red">Processing form. . . please wait. . .</span>');
+        $.ajax({url: "submit.php", type: 'POST', data: formData, success: function(response)
+        {
+            var res = JSON.parse(response);
+            console.log(res);
+            if(res.success == true)
+                $('#message').html('<span style="color: green">Form submitted successfully</span>');
+            else
+                $('#message').html('<span style="color: red">Form not submitted. Some error in running the database query.</span>');
+        }
+        });
+    }
+    else
+    {
         alert("Ingresaste un email invalido");
-        return false;
     }
 }

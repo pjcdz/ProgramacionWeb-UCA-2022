@@ -82,7 +82,6 @@ while($res2 = mysqli_fetch_array($result2))
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>SIAMES STORE - Hardware shop</title>
     <link rel="icon" href="css/img/SS2.png" type="image/icon type">
-    <link rel="stylesheet" href="css/edit.css">
     <link rel="stylesheet" href="css/add.css">
 </head>
 

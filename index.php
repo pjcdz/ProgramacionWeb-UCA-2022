@@ -27,7 +27,7 @@ if(empty($_GET["categoria"])){
         <link rel="icon" href="css/img/SS2.png" type="image/icon type">
         <link rel="stylesheet" href="css/index.css">
         <script type="text/javascript" src="js/funtions.js" defer></script>
-        <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=DM+Sans%3A700%7CHeebo%3A400%2C700%7CAldrich%3A400&#038;display=swap&#038;ver=6.0.2' media='all'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -75,13 +75,14 @@ if(empty($_GET["categoria"])){
                 <?php } ?>   
             </div>
             <div class="contenedor">
-                <form id="form1" action="#">
+                <form id="form1" action="" method="post">
                     <h1>INGRESA TU MAIL AQUÍ</h1>
                     <p>recibi ofertas y nuestros nuevos productos</p>
                     <div class="email-box">
                         <input id="test" class="tbox" type="text" name="email" placeholder="Enter your email">
                         <!-- <button class="btn" type="button" name="submit" onclick="ValidateEmail(document.form1.text1)">Subscribe</button>     -->
-                        <input class="btn" type="submit" name="submit" value="Subscribe" onclick="ValidateEmail()"/>
+                        <!-- <input class="btn" type="submit" name="submit" value="Subscribe" onclick="ValidateEmail()"/> -->
+                        <input class="btn" type="submit" name="submit" value="Subscribe" onclick="SubmitEmail()"/>
                 </form>
             </div>
             
