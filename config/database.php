@@ -1,9 +1,9 @@
 <?php
 
-$hostname = 'localhost';
-$database = 'siames';
-$username = 'siames';
-$password = 's1amesStore';
+$hostname = '';
+$database = '';
+$username = '';
+$password = '';
 
 $mysqli = mysqli_connect($hostname, $username, $password, $database); 
 
